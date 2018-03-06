@@ -1,0 +1,28 @@
+	public int[] getMins(int n){
+		int p1 = 0;//min
+		int p2 = 0;//max
+		int min = 10000000;
+		int max = 10000000;
+		
+		for(int i=0;i<n;i++){
+			if(min > this.Nodes[i].weight && this.Nodes[i].parent == null ){
+				p1 = i;
+				min = this.Nodes[i].weight;
+			}
+		}
+		
+		for(int i=0;i<n;i++){
+			if(max > this.Nodes[i].weight && i != p1 && this.Nodes[i].parent == null){
+				p2 = i;
+				max = this.Nodes[i].weight;
+			}
+		}
+		
+		
+		int []P = new int[2];
+		P[0] = p1;
+		P[1] = p2;
+		
+		return P;
+		
+	}
